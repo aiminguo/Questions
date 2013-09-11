@@ -26,7 +26,7 @@ public class TriNaryTree {
     
     //Add new integer node to the tree 
     public void insert(Node node, int value) {
-        //for right node case  
+        //for left node case  
         if (value < node.data) {
             // create left child if not exist  
             if (null == node.left) {   
@@ -78,8 +78,9 @@ public class TriNaryTree {
 	    		node.middle = delete(value, node.middle);
 	    	} else if (node.right != null) {
 	    		//replace it with most left node in Right subtree
-	    		node.data = findMostLeft(node.right).data;
-	    		node.right = delete(findMostLeft(node.right).data, node.right);
+	    		Node ml = findMostLeft(node.right);
+	    		node.data = ml.data;
+	    		node.right = delete(ml.data, node.right);
 	    	} else {
 	    		//replace it with the left node    		
 	    		node = node.left;
