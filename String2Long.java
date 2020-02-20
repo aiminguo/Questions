@@ -38,11 +38,11 @@ public class String2Long {
 			result *= 10;
 
 			//check the Overflow case
-            if(result > Long.MAX_VALUE)
-            	throw new NumberFormatException("Number Overflow."); 
+			if(result > Long.MAX_VALUE)
+				throw new NumberFormatException("Number Overflow."); 
 			result += value;   
-			
-		}			
+
+			}			
 		
 		//covert the result to long based on sign
 		return (isNagtive ? -1 : 1) * (long) result;
